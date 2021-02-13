@@ -2,6 +2,12 @@ cmake_minimum_required(VERSION 3.19.4)
 
 project(OLAS VERSION 1.0)
 
+find_library(cwdwcw glew)
+if (${cwdwcw} STREQUAL cwdwcw-NOTFOUND)
+    message(FATAL_ERROR "not found")
+else()
+    message(STATUS "...")
+endif()
 add_executable(${PROJECT_NAME} main.cpp)
 
 # adder use logic
@@ -64,3 +70,12 @@ target_link_libraries(${PROJECT_NAME}
     ${EXTRA_LINKS} 
     glfw
 )
+
+# install(TARGETS ${PROJECT_NAME} DESTINATION bin)
+# install(FILES "${PROJECT_BINARY_DIR}/OLASConfig.h" DESTINATION include)
+
+include(InstallRequiredSystemLibraries)
+set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+set(CPACK_PACKAGE_VERSION_MAJOR "${OLAS_VERSION_MAJOR}")
+set(CPACK_PACKAGE_VERSION_MINOR "${OLAS_VERSION_MINOR}")
+include(CPack)
