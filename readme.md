@@ -54,8 +54,8 @@ make -C build/
 │        ├── target_link_directories(${PROJECT_NAME} PRIVATE LIBRARY_FODLER)
 │        └── target_link_libraries(${PROJECT_NAME} LIBRARY_NAME)
 └── main.cpp
-        ├── #include "[.h]"
-        └── or #include "LIBRARY_FODLER/[.h]" w/o target_include_directories(...)
+         ├── #include "[.h]"
+         └── or #include "LIBRARY_FODLER/[.h]" w/o target_include_directories(...)
 ``` 
 
 ## Optional Library
@@ -94,13 +94,13 @@ cmake -DUSE_ADDER=ON -S . -B out/build
 │        └── #cmakedefine USE_ADDER
 │
 └── main.cpp
-        ├── #ifdef USE_ADDER
-        │    │   #include <adder.h>
-        │    #endif
-        │
-        └──#ifdef USE_ADDER
-            │   std::cout << add(72.1f, 0.0f) << std::endl;
-            #endif
+         ├── #ifdef USE_ADDER
+         │    │   #include <adder.h>
+         │    #endif
+         │
+         └── #ifdef USE_ADDER
+              │   std::cout << add(72.1f, 0.0f) << std::endl;
+             #endif
 ```
 ## Install with CPack
 ```
@@ -108,11 +108,11 @@ cmake -DUSE_ADDER=ON -S . -B out/build
 ├── License.txt
 │
 └── CMakeLists.txt
-         ├──include(InstallRequiredSystemLibraries)
-         ├──set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
-         ├──set(CPACK_PACKAGE_VERSION_MAJOR "${OLAS_VERSION_MAJOR}")
-         ├──set(CPACK_PACKAGE_VERSION_MINOR "${OLAS_VERSION_MINOR}")
-         └──include(CPack)
+         ├── include(InstallRequiredSystemLibraries)
+         ├── set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/License.txt")
+         ├── set(CPACK_PACKAGE_VERSION_MAJOR "${OLAS_VERSION_MAJOR}")
+         ├── set(CPACK_PACKAGE_VERSION_MINOR "${OLAS_VERSION_MINOR}")
+         └── include(CPack)
 
 ```
 ## Find Library
@@ -121,7 +121,7 @@ cmake -DUSE_ADDER=ON -S . -B out/build
 ├── License.txt
 │
 └── CMakeLists.txt
-         ├──find_library(CUSTOMIZED_NAME ACTUAL_LIBRARY)
+         ├── find_library(CUSTOMIZED_NAME ACTUAL_LIBRARY)
          └── if (CUSTOMIZED_NAME STREQUAL CUSTOMIZED_NAME-NOTFOUND)
               │  message(FATAL_ERROR "...")
              else()
