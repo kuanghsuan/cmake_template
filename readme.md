@@ -1,12 +1,15 @@
 ## configure makefile
+```
 cmake -S .  -B build/
-
+```
 ## build the project
+```
 make -C build/
-
+```
 ## run the project
+```
 ./build/${PROJECT_NAME}
-
+```
 ## VERSION
 ```
 .
@@ -56,7 +59,9 @@ make -C build/
 ``` 
 
 ## Optional Library
+```
 cmake -DUSE_ADDER=ON -S . -B out/build
+```
 ```
 .
 ├── LIBRARY_FODLER/
