@@ -8,6 +8,7 @@ make -C build/
 ./build/${PROJECT_NAME}
 
 ## VERSION
+```
 .
 ├── build/
 │     └── ${PROJECT_NAME}Config.h #auto generate
@@ -22,9 +23,10 @@ make -C build/
 │        └── #define PROJECT_NAME_VERSION_MINOR @PROJECT_NAME_VERSION_MINOR@
 │
 └── main.cpp
-
+```
 
 ## Simple way
+```
 .
 ├── build/
 ├── CMakeLists.txt
@@ -51,9 +53,11 @@ make -C build/
 └── main.cpp
         ├── #include "[.h]"
         └── or #include "LIBRARY_FODLER/[.h]" w/o target_include_directories(...)
+``` 
 
 ## Optional Library
 cmake -DUSE_ADDER=ON -S . -B out/build
+```
 .
 ├── LIBRARY_FODLER/
 │   ├── ${.cpp}
@@ -92,8 +96,9 @@ cmake -DUSE_ADDER=ON -S . -B out/build
         └──#ifdef USE_ADDER
             │   std::cout << add(72.1f, 0.0f) << std::endl;
             #endif
-
+```
 ## Install with CPack
+```
 .
 ├── License.txt
 │
@@ -116,3 +121,4 @@ cmake -DUSE_ADDER=ON -S . -B out/build
              else()
               │  message(STATUS "...")
              endif()
+```
