@@ -41,8 +41,8 @@ make -C build/
 ## Library
 .
 ├── LIBRARY_FODLER/
-│   ├── ${.cpp}
-│   ├── ${.h}
+│   ├── [.cpp]
+│   ├── [.h]
 │   └── CMakeLists.txt
 │           └── add_library(LIBRARY_NAME [.cpp] [.h])
 ├── build/
@@ -65,8 +65,8 @@ cmake -DUSE_ADDER=ON -S . -B out/build
 ```
 .
 ├── LIBRARY_FODLER/
-│   ├── ${.cpp}
-│   ├── ${.h}
+│   ├── [.cpp]
+│   ├── [.h]
 │   └── CMakeLists.txt
 │           └── add_library(LIBRARY_NAME [.cpp] [.h])
 ├── build/
@@ -81,7 +81,7 @@ cmake -DUSE_ADDER=ON -S . -B out/build
 │        │    endif()
 │        │
 │        ├── add_executable(${PROJECT_NAME} main.cpp)
-│        ├── configure_file(${PROJECT_NAME}Config.h.in ${PROJECT_NAME}Config.h)
+│        ├── configure_file(PROJECT_NAMEConfig.h.in PROJECT_NAMEConfig.h)
 │        ├── add_executable(${PROJECT_NAME} main.cpp)
 │        ├── add_subdirectory(LIBRARY_FODLER)
 │        ├── target_include_directories(${PROJECT_NAME} ${EXTRA_INCLUDES_DIRS})
