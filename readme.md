@@ -15,8 +15,8 @@ make -C build/
 .
 ├── build/
 │     └── ${PROJECT_NAME}Config.h #auto generate
-│        ├── #define OLAS_VERSION_MAJOR 1
-│        └── #define OLAS_VERSION_MINOR 0
+│        ├── #define PROJECT_NAME_VERSION_MAJOR 1
+│        └── #define PROJECT_NAME_VERSION_MINOR 0
 ├── CMakeLists.txt
 │        ├── project(${PROJECT_NAME} VERSION 1.0)
 │        ├── add_executable(${PROJECT_NAME} main.cpp)
