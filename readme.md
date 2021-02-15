@@ -14,13 +14,14 @@ make -C build/
 ```
 .
 ├── build/
-│     └── ${PROJECT_NAME}Config.h #auto generate
-│        ├── #define PROJECT_NAME_VERSION_MAJOR 1
-│        └── #define PROJECT_NAME_VERSION_MINOR 0
+│     └── PROJECT_NAMEConfig.h #auto generate
+│           ├── #define PROJECT_NAME_VERSION_MAJOR 1
+│           └── #define PROJECT_NAME_VERSION_MINOR 0
 ├── CMakeLists.txt
 │        ├── project(${PROJECT_NAME} VERSION 1.0)
 │        ├── add_executable(${PROJECT_NAME} main.cpp)
-│        └── configure_file(PROJECT_NAMEConfig.h.in PROJECT_NAMEConfig.h)
+│        ├── configure_file(PROJECT_NAMEConfig.h.in PROJECT_NAMEConfig.h)
+│        └── target_include_directories(${PROJECT_NAME} PUBLIC ${PROJECT_BINARY_DIR})
 ├── PROJECT_NAMEConfig.h.in
 │        ├── #define PROJECT_NAME_VERSION_MAJOR @PROJECT_NAME_VERSION_MAJOR@
 │        └── #define PROJECT_NAME_VERSION_MINOR @PROJECT_NAME_VERSION_MINOR@
